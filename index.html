@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Animacija</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 300px;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                background-color: #050210;
+            }
+
+            .gradient {
+                position: absolute;
+                height: 300px;
+                width: 300px;
+                border-radius: 50%;
+                background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+                animation: gradient 0.5s linear infinite;
+            }
+
+            @keyframes gradient {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+            .gradient span {
+                position: absolute;
+                height: 300px;
+                width: 300px;
+                border-radius: 50%;
+                background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+            }
+
+            .gradient span:nth-child(1) {
+                filter: blur(10px);
+            }
+
+            .gradient span:nth-child(2) {
+                filter: blur(20px);
+            }
+
+            .gradient::after {
+                content: '';
+                position: fixed;
+                top: 15px;
+                right: 15px;
+                left: 15px;
+                bottom: 15px;
+                background: #050210;
+                border-radius: 50%;
+            }
+
+            .centar {
+                position: absolute;
+                background: rgb(0, 0, 0);
+                border-radius: 50%;
+                margin-top: 15px;
+                height: 275px;
+                width: 275px;
+                transform: scale(0.8);
+                animation: centar 1.5s infinite;
+            }
+
+            @keyframes centar {
+                0% {
+                    transform: scale(0.1);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="gradient">
+            <span></span>
+            <span></span>
+        </div>
+        <div class="centar"></div>
+    </body>
+</html>
